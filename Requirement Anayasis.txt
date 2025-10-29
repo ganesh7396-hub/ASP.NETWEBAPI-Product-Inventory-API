@@ -1,0 +1,83 @@
+🧩 Task Title: Product Inventory Management API
+
+📋 Task Requirements – Step-by-Step Flow
+1. Project Initialization
+
+Create a new ASP.NET Core Web API project.
+Configure the project to use Entity Framework Core with SQL Server.
+Add necessary NuGet packages for EF Core and Swagger.
+
+
+2. Database Design
+
+Create a SQL Server database named InventoryDB.
+
+Tables to Create:
+Product
+
+ProductId (int, PK)
+Name (nvarchar(100))
+Description (nvarchar(255))
+Price (decimal)
+Quantity (int)
+CategoryId (int, FK)
+
+Category
+
+CategoryId (int, PK)
+CategoryName (nvarchar(100))
+
+
+3. Entity Framework Setup
+
+Create model classes for Product and Category.
+Create a DbContext class named InventoryDbContext.
+Configure relationships between entities.
+Add connection string in appsettings.json.
+Apply migrations and update the database.
+
+
+4. API Endpoints
+Create a controller for each entity:
+ProductController
+
+GET /api/products – Get all products.
+GET /api/products/{id} – Get product by ID.
+POST /api/products – Add a new product.
+PUT /api/products/{id} – Update product details.
+DELETE /api/products/{id} – Delete a product.
+
+CategoryController
+
+GET /api/categories – Get all categories.
+POST /api/categories – Add a new category.
+
+
+5. Business Logic Requirements
+
+Ensure that a product cannot be added without a valid category.
+Prevent deletion of a category if products are associated with it.
+Validate that Price and Quantity are non-negative.
+
+
+6. Swagger Integration
+
+Enable Swagger for API documentation.
+Ensure all endpoints are visible and testable via Swagger UI.
+
+
+7. Error Handling & Validation
+
+Use data annotations for model validation.
+Implement global exception handling middleware.
+Return meaningful error messages and appropriate HTTP status codes.
+
+
+8. Bonus Features (Optional)
+
+Implement pagination for product listing.
+Add filtering by category or price range.
+Add sorting by name or price.
+
+
+Would you like a similar task with authentication or file upload next?
